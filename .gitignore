@@ -1,0 +1,7 @@
+# Logs & scratch files
+*.log
+test_dom.html
+test_prop_dom.html
+test_admin_dom*.html
+.DS_Store
+Thumbs.db

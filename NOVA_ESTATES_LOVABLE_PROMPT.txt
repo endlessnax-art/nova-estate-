@@ -1,0 +1,18 @@
+LOVABLE MASTER PROMPT — NOVA ESTATES
+
+Build a complete responsive real-estate website for fictional demo company NOVA ESTATES.
+Tagline: Building Trust. Creating Futures.
+Location: Mahbubnagar, Telangana, India.
+Business: Residential plots, apartments and villas.
+Design: Corporate premium, white + light grey + blue #2563EB + navy #142B4E, Manrope/DM Sans typography.
+
+Create public pages: Home, Properties, Property Details, Projects, About, Contact, Privacy Policy and Terms.
+Home must have a strong hero, property search, featured listings, project previews, about preview and contact CTA.
+Listings need property cards, title/location search, filters for Plot/Apartment/Villa and location, price sorting, clear filters and empty state.
+Details page: gallery, price, area, features, description, location/map placeholder and prefilled enquiry.
+Projects: project cards and enquiry CTAs.
+Contact form: name, phone, email, interest and message with validation and success message.
+Admin area: dashboard, property CRUD UI, mark property sold, leads table and lead statuses New/Contacted/Site Visit/Converted/Closed.
+First use fictional mock data/local state only. Clearly state demo admin has no secure login and no real backend.
+Use React + TypeScript + Tailwind if supported, reusable components, responsive design, clean routing and accessible controls. Keep architecture ready for later Supabase database, authentication and image storage. Never expose secret keys. Do not invent genuine reviews, awards, verified status or legal approvals. Label every sample property, price, project and contact as fictional demo content.
+Deliver working navigation, filters and forms plus README setup instructions. Do not connect Supabase until asked.

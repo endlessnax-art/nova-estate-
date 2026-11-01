@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Property Details | NOVA ESTATES Mahbubnagar</title>
+  <meta name="description" content="View comprehensive property details, photo gallery, specifications, and layout highlights for NOVA ESTATES in Mahbubnagar.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><rect width='24' height='24' rx='4' fill='%23142B4E'/><text x='12' y='17' font-size='14' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>N</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="demo-topbar">
+    <div class="demo-topbar-left">
+      <span class="demo-badge-pill">Fictional Demo Listing</span>
+      <span>Mahbubnagar, Telangana · Illustrative property details and pricing</span>
+    </div>
+    <div class="demo-topbar-right">
+      <a href="index.html#properties">← Back to All Listings</a>
+      <a href="admin.html">Admin Demo ↗</a>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-brand" href="index.html">
+        <div class="logo-icon">N</div>
+        <div class="logo-text">
+          <span class="logo-title">NOVA</span>
+          <span class="logo-subtitle">ESTATES</span>
+        </div>
+      </a>
+
+      <nav class="desktop-nav">
+        <a class="nav-link" href="index.html#home">Home</a>
+        <a class="nav-link active" href="index.html#properties">Properties</a>
+        <a class="nav-link" href="index.html#projects">Projects</a>
+        <a class="nav-link" href="index.html#about">About</a>
+        <a class="nav-link" href="index.html#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn-secondary btn-sm" href="index.html#properties">
+          ← Back to Search
+        </a>
+        <a class="btn btn-whatsapp btn-sm" id="headerWhatsappBtn" href="#" target="_blank" rel="noopener noreferrer">
+          WhatsApp Enquiry
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Property Detail View Container -->
+  <main id="propertyDetailContainer">
+    <!-- Populated dynamically by JavaScript -->
+    <div class="container" style="padding: 80px 20px; text-align: center;">
+      <p style="font-size: 18px; color: var(--slate-500);">Loading property details...</p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <div>
+        © 2026 NOVA ESTATES · Fictional Demonstration Website · Mahbubnagar, Telangana.
+      </div>
+      <div>
+        <a href="index.html#properties" style="color:#93C5FD; font-weight:600; margin-right: 16px;">Browse Properties</a>
+        <a href="admin.html" style="color:#93C5FD; font-weight:600;">Admin Dashboard ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget -->
+  <a class="floating-whatsapp-btn" id="floatingWhatsapp" href="#" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (Demo)">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.176.2-.351.226-.652.076-.3-.15-1.268-.468-2.416-1.492-.894-.798-1.498-1.784-1.674-2.085-.176-.3-.019-.462.132-.612.136-.135.301-.35.452-.526.15-.175.2-.3.301-.501.101-.2.05-.375-.025-.525-.075-.15-.676-1.63-.926-2.233-.243-.587-.49-.507-.676-.516l-.576-.01c-.2 0-.526.075-.802.375s-1.052 1.028-1.052 2.508 1.077 2.908 1.228 3.109c.15.2 2.119 3.235 5.132 4.538.717.31 1.278.496 1.716.634.72.228 1.375.196 1.893.118.577-.087 1.782-.728 2.033-1.431.25-.702.25-1.303.175-1.431-.075-.128-.276-.203-.576-.353z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.892.524 3.662 1.434 5.176L2 22l4.982-1.393A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.63 0-3.14-.49-4.4-1.33l-.315-.208-2.955.826.84-2.87-.215-.327A8.163 8.163 0 0 1 3.8 12c0-4.521 3.679-8.2 8.2-8.2 4.522 0 8.2 3.679 8.2 8.2 0 4.522-3.678 8.2-8.2 8.2z"/></svg>
+    <span class="floating-tooltip">Chat with NOVA ESTATES (Demo)</span>
+  </a>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Shared Data Store & Detail Page Script -->
+  <script src="data.js"></script>
+  <script>
+    (function() {
+      'use strict';
+
+      // Parse property id from URL query parameters (e.g. ?id=1 or ?id=NE-P101)
+      const urlParams = new URLSearchParams(window.location.search);
+      const propId = urlParams.get('id') || '1';
+
+      document.addEventListener('DOMContentLoaded', () => {
+        loadPropertyDetails();
+      });
+
+      function loadPropertyDetails() {
+        const container = document.getElementById('propertyDetailContainer');
+        if (!container || !window.NovaStore) return;
+
+        const property = window.NovaStore.getPropertyById(propId);
+
+        if (!property) {
+          container.innerHTML = `
+            <div class="container" style="padding: 100px 20px; text-align: center;">
+              <div class="empty-icon-box">🔍</div>
+              <h2 style="font-size: 28px; font-weight:800; color:var(--navy); margin-bottom:12px;">Property Not Found</h2>
+              <p style="font-size:16px; color:var(--slate-500); max-width:500px; margin:0 auto 24px;">
+                The property you are looking for (Ref: "${safe(propId)}") does not exist or may have been updated in the demo storage.
+              </p>
+              <div style="display:flex; justify-content:center; gap:12px;">
+                <a class="btn btn-primary" href="index.html#properties">Browse All Properties</a>
+                <button class="btn btn-secondary" onclick="window.NovaStore.resetProperties(); location.reload();">Restore Demo Properties</button>
+              </div>
+            </div>
+          `;
+          return;
+        }
+
+        // Set page document title
+        document.title = `${property.name} (${property.priceLabel}) | NOVA ESTATES Mahbubnagar`;
+
+        // Update WhatsApp buttons
+        const whatsappUrl = window.NovaStore.getPropertyWhatsAppUrl(property);
+        const headerWa = document.getElementById('headerWhatsappBtn');
+        const floatingWa = document.getElementById('floatingWhatsapp');
+        if (headerWa) headerWa.href = whatsappUrl;
+        if (floatingWa) floatingWa.href = whatsappUrl;
+
+        // Badges
+        const typeBadge = property.type === 'Plot' ? 'badge-plot' : property.type === 'Villa' ? 'badge-villa' : 'badge-apartment';
+        const statusBadge = property.status === 'Available' ? 'badge-status-available' : property.status === 'Under Offer' ? 'badge-status-under-offer' : 'badge-status-sold';
+
+        // Gallery images
+        const gallery = property.gallery && property.gallery.length ? property.gallery : [property.img];
+        const mainImage = gallery[0];
+
+        // Features list
+        const features = property.features || [
+          "Prime Mahbubnagar location connectivity",
+          "Wide blacktop internal road access",
+          "Underground drainage & electricity cabling",
+          "Immediate demarcation and clear boundaries",
+          "Assisted registration & mutation guidance"
+        ];
+
+        // Landmarks list
+        const landmarks = property.landmarks || [
+          { name: "Collectorate Complex", distance: "6 mins" },
+          { name: "Mahbubnagar Town Center", distance: "10 mins" },
+          { name: "NH-44 Hyderabad Expressway", distance: "8 mins" }
+        ];
+
+        // Render full HTML
+        container.innerHTML = `
+          <!-- Header Bar -->
+          <div class="prop-detail-header">
+            <div class="container">
+              <div class="prop-breadcrumbs">
+                <a href="index.html">Home</a>
+                <span>/</span>
+                <a href="index.html#properties">Properties</a>
+                <span>/</span>
+                <span style="color:var(--slate-800); font-weight:600;">${safe(property.name)}</span>
+              </div>
+
+              <div class="prop-title-row">
+                <div>
+                  <h1 class="prop-main-title">${safe(property.name)}</h1>
+                  <div class="prop-meta-badges">
+                    <span class="badge ${typeBadge}">${property.type}</span>
+                    <span class="badge ${statusBadge}">${property.status}</span>
+                    <span style="font-size:13.5px; color:var(--slate-500); display:inline-flex; align-items:center; gap:4px;">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                      ${safe(property.loc)}, Mahbubnagar, Telangana
+                    </span>
+                    <span class="card-ref-badge" style="position:static;">Ref: ${property.refCode || '#' + property.id}</span>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="prop-price-big">${property.priceLabel}</div>
+                  <div class="prop-price-sub">
+                    ${property.type === 'Plot' ? 'Clear Title · Ready for Registration' : 'Inclusive Price · Car Parking included'}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Main Layout -->
+          <div class="container" style="padding-top: 32px;">
+            <!-- Gallery Component -->
+            <div class="gallery-wrapper">
+              <div class="gallery-main-view">
+                <img id="mainGalleryImg" src="${mainImage}" alt="${safe(property.name)}">
+              </div>
+              <div class="gallery-thumbnails">
+                ${gallery.map((imgUrl, idx) => `
+                  <div class="gallery-thumb-item ${idx === 0 ? 'active' : ''}" onclick="switchGalleryImg('${imgUrl}', this)">
+                    <img src="${imgUrl}" alt="Photo ${idx + 1}">
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <!-- Two-Column Layout (Content + Sticky Enquiry Sidebar) -->
+            <div class="prop-detail-layout">
+              <!-- Left Column: Specs, Description, Features, Map -->
+              <div>
+                <!-- Key Specs Grid -->
+                <div class="spec-matrix-grid">
+                  <div class="spec-cell">
+                    <span class="spec-cell-label">Property Type</span>
+                    <span class="spec-cell-value">${property.type}</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-cell-label">Total Area</span>
+                    <span class="spec-cell-value">${property.area}</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-cell-label">Orientation / Facing</span>
+                    <span class="spec-cell-value">${property.facing || 'East Facing'}</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-cell-label">Locality</span>
+                    <span class="spec-cell-value">${property.loc}</span>
+                  </div>
+                  ${property.beds ? `
+                    <div class="spec-cell">
+                      <span class="spec-cell-label">Bedrooms (BHK)</span>
+                      <span class="spec-cell-value">${property.beds} BHK</span>
+                    </div>
+                  ` : ''}
+                  ${property.baths ? `
+                    <div class="spec-cell">
+                      <span class="spec-cell-label">Bathrooms</span>
+                      <span class="spec-cell-value">${property.baths} Baths</span>
+                    </div>
+                  ` : ''}
+                  <div class="spec-cell">
+                    <span class="spec-cell-label">Status</span>
+                    <span class="spec-cell-value">${property.status}</span>
+                  </div>
+                  <div class="spec-cell">
+                    <span class="spec-cell-label">Reference ID</span>
+                    <span class="spec-cell-value">${property.refCode || '#' + property.id}</span>
+                  </div>
+                </div>
+
+                <!-- Description Block -->
+                <div class="prop-content-block">
+                  <h3 class="prop-block-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    Property Description & Overview
+                  </h3>
+                  <p style="font-size:15px; line-height:1.75; color:var(--slate-700);">
+                    ${safe(property.description || 'Premium real estate opportunity situated in Mahbubnagar. Features excellent connectivity, clear documentation, and standard infrastructural amenities suitable for immediate purchase or residential construction.')}
+                  </p>
+                </div>
+
+                <!-- Key Highlights & Checklist -->
+                <div class="prop-content-block">
+                  <h3 class="prop-block-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    Key Features & Infrastructure Highlights
+                  </h3>
+                  <div class="features-check-grid">
+                    ${features.map(f => `
+                      <div class="feature-check-item">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                        <span>${safe(f)}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+
+                <!-- Location Highlights & Connectivity -->
+                <div class="prop-content-block">
+                  <h3 class="prop-block-title">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Location Highlights & Connectivity (Mahbubnagar)
+                  </h3>
+                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;">
+                    ${landmarks.map(l => `
+                      <div style="display:flex; justify-content:space-between; background:var(--slate-50); padding:12px 16px; border-radius:var(--radius-md); border:1px solid var(--slate-200); font-size:13.5px;">
+                        <span style="font-weight:600; color:var(--navy);">${safe(l.name)}</span>
+                        <span style="color:var(--primary); font-weight:700;">${safe(l.distance)}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+
+                  <!-- Map Placeholder Box -->
+                  <div class="map-placeholder-box">
+                    <div class="map-placeholder-grid"></div>
+                    <div style="position:relative; z-index:2;">
+                      <div style="font-size:32px; margin-bottom:6px;">📍</div>
+                      <strong style="color:var(--navy); font-size:16px; display:block;">Location: ${safe(property.loc)}, Mahbubnagar</strong>
+                      <p style="font-size:13px; color:var(--slate-500); max-width:380px; margin:4px auto 14px;">
+                        Near Collectorate Road & NH-44 Connectivity Belt. Interactive Google Maps integration ready upon live production launch.
+                      </p>
+                      <button class="btn btn-secondary btn-sm" onclick="showToast('Map pin coordinate simulated for Mahbubnagar demo.')">
+                        View Landmark Coordinates (Demo)
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Loan EMI Calculator (Illustrative Demo) -->
+                <div class="calc-card">
+                  <h3 class="prop-block-title" style="margin-bottom:8px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9.5h20"/></svg>
+                    Illustrative EMI & Loan Calculator
+                  </h3>
+                  <p style="font-size:13px; color:var(--slate-500); margin-bottom:18px;">
+                    Estimate monthly loan commitments. Standard bank interest rates and down payment assumptions for illustrative budgeting.
+                  </p>
+
+                  <div class="calc-range-row">
+                    <label>
+                      <span>Loan Amount (80% of Price):</span>
+                      <strong id="calcLoanDisplay">₹${Math.round(property.price * 0.8).toLocaleString('en-IN')}</strong>
+                    </label>
+                    <input type="range" class="form-control" id="calcLoanRange" min="500000" max="${Math.round(property.price * 1.2)}" step="50000" value="${Math.round(property.price * 0.8)}" oninput="updateEmi()">
+                  </div>
+
+                  <div class="calc-range-row">
+                    <label>
+                      <span>Tenure (Years):</span>
+                      <strong id="calcTenureDisplay">20 Years</strong>
+                    </label>
+                    <input type="range" class="form-control" id="calcTenureRange" min="5" max="30" step="1" value="20" oninput="updateEmi()">
+                  </div>
+
+                  <div class="calc-range-row">
+                    <label>
+                      <span>Annual Interest Rate:</span>
+                      <strong id="calcRateDisplay">8.5%</strong>
+                    </label>
+                    <input type="range" class="form-control" id="calcRateRange" min="6.5" max="14.0" step="0.25" value="8.5" oninput="updateEmi()">
+                  </div>
+
+                  <div class="calc-result-box">
+                    <div style="font-size:13px; color:#CBD5E1; text-transform:uppercase; letter-spacing:0.5px;">Estimated Monthly EMI</div>
+                    <div class="calc-emi-number" id="calcEmiDisplay">Calculating...</div>
+                    <small style="font-size:11px; color:#94A3B8; display:block; margin-top:4px;">* Fictional demo estimate. Subject to bank eligibility & processing terms.</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Sticky Enquiry Card & Action Buttons -->
+              <div>
+                <div class="prop-sidebar-sticky">
+                  <div class="sidebar-enquiry-card">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;">
+                      <h3 style="font-size:20px; font-weight:800; color:var(--navy);">Enquire About This Property</h3>
+                      <span class="badge ${statusBadge}">${property.status}</span>
+                    </div>
+                    
+                    <p style="font-size:13px; color:var(--slate-500); margin-bottom:18px;">
+                      Direct enquiry for <strong>${safe(property.refCode || property.name)}</strong>. Saved to local demo leads.
+                    </p>
+
+                    <form id="propEnquiryForm" onsubmit="submitPropertyEnquiry(event, '${property.name}', '${property.refCode || '#' + property.id}')">
+                      <div class="form-group" style="margin-bottom:12px;">
+                        <label class="form-label">Full Name <span class="req">*</span></label>
+                        <input class="form-control" name="name" type="text" placeholder="e.g. Ramesh Reddy" required>
+                      </div>
+
+                      <div class="form-group" style="margin-bottom:12px;">
+                        <label class="form-label">Mobile Phone <span class="req">*</span></label>
+                        <input class="form-control" name="phone" type="tel" placeholder="e.g. 98480 12345" required>
+                      </div>
+
+                      <div class="form-group" style="margin-bottom:12px;">
+                        <label class="form-label">Email Address</label>
+                        <input class="form-control" name="email" type="email" placeholder="e.g. name@example.com">
+                      </div>
+
+                      <div class="form-group" style="margin-bottom:18px;">
+                        <label class="form-label">Message / Note</label>
+                        <textarea class="form-control" name="message" style="min-height:75px;">I am interested in ${safe(property.name)} (${property.priceLabel}) in ${safe(property.loc)}. Please schedule an on-ground site visit and share boundary documentation.</textarea>
+                      </div>
+
+                      <button class="btn btn-primary btn-full" type="submit" style="margin-bottom:12px;">
+                        Send Enquiry →
+                      </button>
+
+                      <a class="btn btn-whatsapp btn-full" href="${whatsappUrl}" target="_blank" rel="noopener noreferrer">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.176.2-.351.226-.652.076-.3-.15-1.268-.468-2.416-1.492-.894-.798-1.498-1.784-1.674-2.085-.176-.3-.019-.462.132-.612.136-.135.301-.35.452-.526.15-.175.2-.3.301-.501.101-.2.05-.375-.025-.525-.075-.15-.676-1.63-.926-2.233-.243-.587-.49-.507-.676-.516l-.576-.01c-.2 0-.526.075-.802.375s-1.052 1.028-1.052 2.508 1.077 2.908 1.228 3.109c.15.2 2.119 3.235 5.132 4.538.717.31 1.278.496 1.716.634.72.228 1.375.196 1.893.118.577-.087 1.782-.728 2.033-1.431.25-.702.25-1.303.175-1.431-.075-.128-.276-.203-.576-.353z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.892.524 3.662 1.434 5.176L2 22l4.982-1.393A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.63 0-3.14-.49-4.4-1.33l-.315-.208-2.955.826.84-2.87-.215-.327A8.163 8.163 0 0 1 3.8 12c0-4.521 3.679-8.2 8.2-8.2 4.522 0 8.2 3.679 8.2 8.2 0 4.522-3.678 8.2-8.2 8.2z"/></svg>
+                        Enquire via WhatsApp (Demo)
+                      </a>
+
+                      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:12px;">
+                        <button class="btn btn-secondary btn-sm" type="button" onclick="sharePropertyLink()">
+                          🔗 Share Link
+                        </button>
+                        <button class="btn btn-secondary btn-sm" type="button" onclick="window.print()">
+                          🖨 Print Summary
+                        </button>
+                      </div>
+
+                      <small style="display:block; text-align:center; color:var(--slate-400); font-size:11px; margin-top:14px;">
+                        Demo enquiries are saved to browser localStorage only.
+                      </small>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Similar / Other Properties -->
+            <div style="margin: 60px 0 40px; border-top:1px solid var(--slate-200); padding-top:40px;">
+              <h3 style="font-size:24px; font-weight:800; color:var(--navy); margin-bottom:20px;">
+                Other Properties You May Consider in Mahbubnagar
+              </h3>
+              <div class="properties-grid" id="similarPropertiesGrid">
+                <!-- Injected below -->
+              </div>
+            </div>
+          </div>
+        `;
+
+        renderSimilarProperties(property);
+        updateEmi();
+      }
+
+      // Switch gallery image
+      window.switchGalleryImg = function(imgUrl, thumbEl) {
+        const mainImg = document.getElementById('mainGalleryImg');
+        if (mainImg) mainImg.src = imgUrl;
+
+        document.querySelectorAll('.gallery-thumb-item').forEach(el => el.classList.remove('active'));
+        if (thumbEl) thumbEl.classList.add('active');
+      };
+
+      // EMI Calculator formula
+      window.updateEmi = function() {
+        const loanEl = document.getElementById('calcLoanRange');
+        const tenureEl = document.getElementById('calcTenureRange');
+        const rateEl = document.getElementById('calcRateRange');
+        if (!loanEl || !tenureEl || !rateEl) return;
+
+        const principal = Number(loanEl.value) || 1000000;
+        const years = Number(tenureEl.value) || 20;
+        const annualRate = Number(rateEl.value) || 8.5;
+
+        document.getElementById('calcLoanDisplay').textContent = `₹${principal.toLocaleString('en-IN')}`;
+        document.getElementById('calcTenureDisplay').textContent = `${years} Years`;
+        document.getElementById('calcRateDisplay').textContent = `${annualRate}%`;
+
+        const monthlyRate = (annualRate / 12) / 100;
+        const months = years * 12;
+
+        const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
+        const roundedEmi = Math.round(emi);
+
+        const emiEl = document.getElementById('calcEmiDisplay');
+        if (emiEl) {
+          emiEl.textContent = `₹${roundedEmi.toLocaleString('en-IN')} / month`;
+        }
+      };
+
+      // Handle direct property enquiry
+      window.submitPropertyEnquiry = function(e, propTitle, refCode) {
+        e.preventDefault();
+        const form = e.target;
+        const nameVal = form.elements['name'].value.trim();
+        const phoneVal = form.elements['phone'].value.trim();
+        const emailVal = form.elements['email'].value.trim();
+        const msgVal = form.elements['message'].value.trim();
+
+        if (nameVal.length < 3) {
+          showToast('Please enter your full name (minimum 3 characters).');
+          return;
+        }
+
+        if (!/^[0-9+\-\s]{8,16}$/.test(phoneVal)) {
+          showToast('Please enter a valid phone number (8-16 digits).');
+          return;
+        }
+
+        if (window.NovaStore) {
+          window.NovaStore.addLead({
+            name: nameVal,
+            phone: phoneVal,
+            email: emailVal,
+            interest: `${propTitle} (${refCode})`,
+            propertyRef: refCode,
+            message: msgVal
+          });
+        }
+
+        form.reset();
+        showToast('Enquiry saved to local demo leads! Check Admin Dashboard.');
+      };
+
+      // Copy shareable link
+      window.sharePropertyLink = function() {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(window.location.href);
+          showToast('Property link copied to clipboard!');
+        } else {
+          showToast('Share link: ' + window.location.href);
+        }
+      };
+
+      // Render 3 similar properties
+      function renderSimilarProperties(currentProp) {
+        const grid = document.getElementById('similarPropertiesGrid');
+        if (!grid || !window.NovaStore) return;
+
+        const allProps = window.NovaStore.getProperties();
+        const similar = allProps
+          .filter(p => String(p.id) !== String(currentProp.id))
+          .slice(0, 3);
+
+        grid.innerHTML = similar.map(p => `
+          <article class="property-card">
+            <div class="card-media">
+              <img class="card-img" src="${p.img}" alt="${safe(p.name)}" loading="lazy">
+              <div class="card-badge-layer">
+                <span class="badge ${p.type === 'Plot' ? 'badge-plot' : p.type === 'Villa' ? 'badge-villa' : 'badge-apartment'}">${p.type}</span>
+                <span class="badge ${p.status === 'Available' ? 'badge-status-available' : 'badge-status-under-offer'}">${p.status}</span>
+              </div>
+              <span class="card-ref-badge">${p.refCode || '#' + p.id}</span>
+            </div>
+            <div class="card-body">
+              <div class="card-price-row">
+                <span class="card-price">${p.priceLabel}</span>
+                <span class="card-price-unit">${p.area}</span>
+              </div>
+              <h4 class="card-title"><a href="property.html?id=${p.id}">${safe(p.name)}</a></h4>
+              <div class="card-location">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>${safe(p.loc)}, Mahbubnagar</span>
+              </div>
+              <div class="card-actions" style="margin-top:auto;">
+                <a class="btn btn-secondary btn-sm" href="property.html?id=${p.id}">View Details →</a>
+                <a class="btn btn-whatsapp btn-sm" href="${window.NovaStore.getPropertyWhatsAppUrl(p)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              </div>
+            </div>
+          </article>
+        `).join('');
+      }
+
+      function safe(s) {
+        return String(s || '').replace(/[&<>"']/g, c => ({
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;'
+        }[c]));
+      }
+
+      function showToast(msg) {
+        let container = document.getElementById('toastContainer');
+        if (!container) {
+          container = document.createElement('div');
+          container.id = 'toastContainer';
+          container.className = 'toast-container';
+          document.body.appendChild(container);
+        }
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `<span>${safe(msg)}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+      }
+      window.showToast = showToast;
+
+    })();
+  </script>
+</body>
+</html>

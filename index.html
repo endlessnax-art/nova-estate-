@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOVA ESTATES | Residential Plots, Apartments & Villas in Mahbubnagar</title>
+  <meta name="description" content="Fictional demo real estate portal for NOVA ESTATES in Mahbubnagar, Telangana. Explore residential plots, apartments, and villas.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%232563EB'><rect width='24' height='24' rx='4' fill='%23142B4E'/><text x='12' y='17' font-size='14' font-family='sans-serif' font-weight='bold' fill='white' text-anchor='middle'>N</text></svg>">
+</head>
+<body>
+
+  <!-- Top Announcement & Demo Disclaimer Bar -->
+  <div class="demo-topbar">
+    <div class="demo-topbar-left">
+      <span class="demo-badge-pill">Fictional Demo Showcase</span>
+      <span>Mahbubnagar, Telangana · All listings, prices & plans are illustrative demo data</span>
+    </div>
+    <div class="demo-topbar-right">
+      <span>Demo Phone: +91 90000 00000</span>
+      <a href="admin.html">Admin Dashboard ↗</a>
+    </div>
+  </div>
+
+  <!-- Main Corporate Sticky Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo-brand" href="#home">
+        <div class="logo-icon">N</div>
+        <div class="logo-text">
+          <span class="logo-title">NOVA</span>
+          <span class="logo-subtitle">ESTATES</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="desktop-nav">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#properties">Properties</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a class="btn-admin-pill" href="admin.html" title="Access local demo admin management">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          Admin Demo
+        </a>
+        <a class="btn btn-primary btn-sm" href="#contact">
+          Talk to an Expert ↗
+        </a>
+        <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Open mobile menu">
+          ☰
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Drawer -->
+  <div class="mobile-drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-header">
+      <div class="logo-brand">
+        <div class="logo-icon" style="width:36px; height:36px; font-size:18px;">N</div>
+        <div class="logo-text">
+          <span class="logo-title" style="font-size:18px;">NOVA</span>
+          <span class="logo-subtitle" style="font-size:8px;">ESTATES</span>
+        </div>
+      </div>
+      <button class="drawer-close-btn" id="drawerClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a class="mobile-nav-link" href="#home">Home</a>
+      <a class="mobile-nav-link" href="#properties">Properties</a>
+      <a class="mobile-nav-link" href="#projects">Projects</a>
+      <a class="mobile-nav-link" href="#about">About</a>
+      <a class="mobile-nav-link" href="#contact">Contact Us</a>
+      <a class="mobile-nav-link" href="admin.html" style="color:var(--primary); font-weight:700;">Admin Dashboard ↗</a>
+    </nav>
+    <div class="mobile-drawer-footer">
+      <a class="btn btn-whatsapp btn-full" id="drawerWhatsapp" href="https://wa.me/910000000000?text=Hello%20NOVA%20ESTATES" target="_blank" rel="noopener noreferrer">
+        WhatsApp Enquiry (Demo)
+      </a>
+      <a class="btn btn-primary btn-full" href="#contact">
+        Schedule Site Visit
+      </a>
+      <small style="color:var(--slate-500); text-align:center; font-size:11px;">Fictional demo website · Mahbubnagar, Telangana</small>
+    </div>
+  </aside>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          <span>Building Trust. Creating Futures.</span>
+        </div>
+        <h1 class="hero-title">
+          Find a place<br>to <span class="accent">call yours.</span>
+        </h1>
+        <p class="hero-description">
+          Thoughtfully selected residential plots, modern apartments, and private luxury villas in and around Mahbubnagar, Telangana. Transparent guidance from booking to registration.
+        </p>
+        <div class="hero-cta-group">
+          <a class="btn btn-white btn-lg" href="#properties">
+            Explore Properties →
+          </a>
+          <a class="btn btn-primary btn-lg" href="#contact">
+            Schedule Site Visit
+          </a>
+        </div>
+        <div class="hero-trust-row">
+          <div class="hero-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <span>Clear Demarcation & Boundary Guidance</span>
+          </div>
+          <div class="hero-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Mahbubnagar Local Market Focus</span>
+          </div>
+          <div class="hero-trust-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Prompt WhatsApp & Assisted Site Visits</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Search Bar (Overlapping Hero) -->
+  <div class="container quick-search-wrapper">
+    <div class="quick-search-card">
+      <div class="search-tabs">
+        <button class="search-tab-btn active" data-type="">All Properties</button>
+        <button class="search-tab-btn" data-type="Plot">Residential Plots</button>
+        <button class="search-tab-btn" data-type="Apartment">Apartments</button>
+        <button class="search-tab-btn" data-type="Villa">Villas</button>
+      </div>
+      <div class="quick-search-fields">
+        <div class="field-group">
+          <label class="field-label" for="quickType">Property Type</label>
+          <select class="form-select" id="quickType">
+            <option value="">Any property type</option>
+            <option value="Plot">Residential Plot</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Villa">Villa</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="quickLoc">Locality / Area</label>
+          <select class="form-select" id="quickLoc">
+            <option value="">All localities in Mahbubnagar</option>
+            <option value="Yenugonda">Yenugonda</option>
+            <option value="New Town">New Town</option>
+            <option value="Jadcherla Road">Jadcherla Road</option>
+            <option value="Collectorate Area">Collectorate Area</option>
+            <option value="Station Road">Station Road</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="quickBudget">Budget Range</label>
+          <select class="form-select" id="quickBudget">
+            <option value="">Any budget</option>
+            <option value="under25">Under ₹25 Lakhs</option>
+            <option value="25to50">₹25 Lakhs – ₹50 Lakhs</option>
+            <option value="50to100">₹50 Lakhs – ₹1 Crore</option>
+            <option value="above100">Above ₹1 Crore</option>
+          </select>
+        </div>
+        <div>
+          <button class="btn btn-primary btn-full" onclick="applyQuick()">
+            Search Properties →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust Pillars / Band Section -->
+  <section class="band-section">
+    <div class="container">
+      <div class="band-grid">
+        <div class="band-card">
+          <div class="band-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <h3 class="band-title">Local Knowledge</h3>
+            <p class="band-desc">Deep roots in Mahbubnagar corridors, NH-44 highway connectivity, and master growth plans.</p>
+          </div>
+        </div>
+        <div class="band-card">
+          <div class="band-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div>
+            <h3 class="band-title">Clear Information</h3>
+            <p class="band-desc">Accurate plot square yards, carpet areas, and transparent pricing with no hidden charges.</p>
+          </div>
+        </div>
+        <div class="band-card">
+          <div class="band-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <h3 class="band-title">Dedicated Support</h3>
+            <p class="band-desc">Guided site visits, document walkthroughs, and responsive communication via WhatsApp.</p>
+          </div>
+        </div>
+        <div class="band-card">
+          <div class="band-icon-box">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h3 class="band-title">Trusted Guidance</h3>
+            <p class="band-desc">A fictional demo portal demonstrating ethical real estate presentation and buyer peace of mind.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Properties Section (Listings, Filters, Cards) -->
+  <section class="section-padding" id="properties">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">CURATED FOR YOU</span>
+        <h2 class="section-title">Featured & Available Properties</h2>
+        <p class="section-subtitle">Explore a handpicked selection of verified residential plots, apartments, and villas in Mahbubnagar.</p>
+      </div>
+
+      <!-- Filters & Sorting Toolbar -->
+      <div class="filters-toolbar">
+        <div class="filters-grid">
+          <div class="filter-search-box">
+            <span class="filter-search-icon">🔍</span>
+            <input class="form-input" id="q" type="text" placeholder="Search by name, road, or locality...">
+          </div>
+          <div>
+            <select class="form-select" id="type">
+              <option value="">All Property Types</option>
+              <option value="Plot">Residential Plots</option>
+              <option value="Apartment">Apartments</option>
+              <option value="Villa">Villas</option>
+            </select>
+          </div>
+          <div>
+            <select class="form-select" id="loc">
+              <option value="">All Localities</option>
+              <option value="Yenugonda">Yenugonda</option>
+              <option value="New Town">New Town</option>
+              <option value="Jadcherla Road">Jadcherla Road</option>
+              <option value="Collectorate Area">Collectorate Area</option>
+              <option value="Station Road">Station Road</option>
+            </select>
+          </div>
+          <div>
+            <select class="form-select" id="budget">
+              <option value="">Any Budget</option>
+              <option value="under25">Under ₹25 Lakhs</option>
+              <option value="25to50">₹25L – ₹50 Lakhs</option>
+              <option value="50to100">₹50L – ₹1 Crore</option>
+              <option value="above100">Above ₹1 Crore</option>
+            </select>
+          </div>
+          <div>
+            <select class="form-select" id="sort">
+              <option value="featured">Sort: Featured First</option>
+              <option value="low">Price: Low to High</option>
+              <option value="high">Price: High to Low</option>
+              <option value="area-low">Area: Small to Large</option>
+              <option value="area-high">Area: Large to Small</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filters-meta-row">
+          <div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+            <span class="results-count-text" id="resultsCount">Loading properties...</span>
+            <div class="active-filter-chips" id="activeChips"></div>
+          </div>
+          <button class="btn-clear-filters" id="clearFiltersBtn" type="button">
+            ✕ Clear all filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Property Cards Grid -->
+      <div class="properties-grid" id="cards"></div>
+
+      <!-- Empty State -->
+      <div class="empty-state" id="empty" hidden>
+        <div class="empty-icon-box">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 class="empty-title">No matching properties found</h3>
+        <p class="empty-desc">We couldn't find any properties matching your current filters. Try relaxing your search criteria or resetting filters.</p>
+        <button class="btn btn-primary" onclick="resetAllFilters()">Reset All Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="section-padding projects-section" id="projects">
+    <div class="container">
+      <div class="section-head text-center">
+        <span class="section-tag">PLANNED WITH PURPOSE</span>
+        <h2 class="section-title">Explore Our Marquee Projects</h2>
+        <p class="section-subtitle">Signature plotted developments and communities shaping modern living across Mahbubnagar.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-header-img">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=900&q=80" alt="NOVA Green County Plotted Venture" loading="lazy">
+            <span class="project-status-tag">Ready for Registration</span>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Residential Plots</span>
+            <h3 class="project-title">NOVA Green County</h3>
+            <p class="project-loc">⌖ Jadcherla Road, Mahbubnagar</p>
+            <p class="project-overview">An 18-acre master-planned residential plotted community featuring 40ft wide blacktop roads, underground drainage, and immediate highway access.</p>
+            
+            <div class="project-progress-wrap">
+              <div class="progress-label-row">
+                <span>Venture Development</span>
+                <span>95% Completed</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 95%;"></div>
+              </div>
+            </div>
+
+            <div class="project-amenities">
+              <span class="amenity-chip">40ft BT Roads</span>
+              <span class="amenity-chip">Underground Drainage</span>
+              <span class="amenity-chip">Park & Playground</span>
+              <span class="amenity-chip">Avenue Trees</span>
+            </div>
+
+            <div class="project-actions">
+              <button class="btn btn-secondary btn-sm" onclick="requestBrochure('NOVA Green County')">
+                Request Brochure
+              </button>
+              <button class="btn btn-primary btn-sm" onclick="enquire('NOVA Green County', 'Proj-GreenCounty')">
+                Enquire Details ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-header-img">
+            <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=900&q=80" alt="NOVA Heights Towers" loading="lazy">
+            <span class="project-status-tag">Under Construction</span>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Urban Living Apartments</span>
+            <h3 class="project-title">NOVA Heights Towers</h3>
+            <p class="project-loc">⌖ New Town, Mahbubnagar</p>
+            <p class="project-overview">G+5 contemporary residential towers offering spacious 2 & 3 BHK flats with stilt parking, automatic elevators, and rooftop fitness facilities.</p>
+            
+            <div class="project-progress-wrap">
+              <div class="progress-label-row">
+                <span>Construction Progress</span>
+                <span>70% Completed</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 70%;"></div>
+              </div>
+            </div>
+
+            <div class="project-amenities">
+              <span class="amenity-chip">High-Speed Lifts</span>
+              <span class="amenity-chip">Covered Stilt Parking</span>
+              <span class="amenity-chip">DG Power Backup</span>
+              <span class="amenity-chip">Fitness Gym</span>
+            </div>
+
+            <div class="project-actions">
+              <button class="btn btn-secondary btn-sm" onclick="requestBrochure('NOVA Heights Towers')">
+                Request Brochure
+              </button>
+              <button class="btn btn-primary btn-sm" onclick="enquire('NOVA Heights Towers', 'Proj-Heights')">
+                Enquire Details ↗
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-header-img">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80" alt="NOVA Palm Meadows Gated Villa" loading="lazy">
+            <span class="project-status-tag">Phase 1 Handover</span>
+          </div>
+          <div class="project-body">
+            <span class="project-category">Gated Villa Enclave</span>
+            <h3 class="project-title">NOVA Palm Meadows</h3>
+            <p class="project-loc">⌖ Yenugonda, Mahbubnagar</p>
+            <p class="project-overview">Exclusive enclave of 24 triplex and duplex villas nestled near Yenugonda hills with private lawns, clubhouse, and EV charging provisions.</p>
+            
+            <div class="project-progress-wrap">
+              <div class="progress-label-row">
+                <span>Handover Progress</span>
+                <span>85% Completed</span>
+              </div>
+              <div class="progress-track">
+                <div class="progress-fill" style="width: 85%;"></div>
+              </div>
+            </div>
+
+            <div class="project-amenities">
+              <span class="amenity-chip">Private Portico</span>
+              <span class="amenity-chip">EV Charging</span>
+              <span class="amenity-chip">Residents Clubhouse</span>
+              <span class="amenity-chip">24/7 Security</span>
+            </div>
+
+            <div class="project-actions">
+              <button class="btn btn-secondary btn-sm" onclick="requestBrochure('NOVA Palm Meadows')">
+                Request Brochure
+              </button>
+              <button class="btn btn-primary btn-sm" onclick="enquire('NOVA Palm Meadows', 'Proj-PalmMeadows')">
+                Enquire Details ↗
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="footer-disclaimer-note" style="text-align: center; margin-top: 30px;">
+        * Notice: All project names, amenities, and progress indicators are fictional demonstration examples for this website project.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="section-padding" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <img class="about-main-img" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=80" alt="NOVA ESTATES Mahbubnagar Showcase" loading="lazy">
+          <div class="about-stat-card">
+            <span class="about-stat-number">100%</span>
+            <span class="about-stat-label">Transparent Information Guidance in Mahbubnagar</span>
+          </div>
+        </div>
+
+        <div>
+          <span class="section-tag">A BETTER WAY TO FIND PROPERTY</span>
+          <h2 class="section-title">Built on Trust.<br><i style="color:var(--primary); font-style:italic;">Focused on You.</i></h2>
+          <p class="section-subtitle" style="margin-bottom: 24px;">
+            NOVA ESTATES is a premier fictional real-estate demonstration brand designed to showcase modern property discovery in Mahbubnagar, Telangana. Our philosophy emphasizes transparent communication, verified plot boundaries, and a frictionless enquiry process.
+          </p>
+
+          <div class="about-steps-list">
+            <div class="about-step-item">
+              <div class="step-num-badge">1</div>
+              <div>
+                <h4 class="step-title">Clear Discovery</h4>
+                <p class="step-desc">Detailed dimensions, carpet areas, road widths, and pricing without ambiguous estimates.</p>
+              </div>
+            </div>
+            <div class="about-step-item">
+              <div class="step-num-badge">2</div>
+              <div>
+                <h4 class="step-title">Assisted Site Inspection</h4>
+                <p class="step-desc">Complimentary on-ground visits guided by knowledgeable local Mahbubnagar coordinators.</p>
+              </div>
+            </div>
+            <div class="about-step-item">
+              <div class="step-num-badge">3</div>
+              <div>
+                <h4 class="step-title">Documentation & Registration Support</h4>
+                <p class="step-desc">Step-by-step assistance from token agreement to final mutation and registration.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
+            <a class="btn btn-primary" href="#contact">Schedule a Consultation ↗</a>
+            <button class="btn btn-secondary" onclick="openModal('disclaimerModal')">Read Demo Notice</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Enquiry Section -->
+  <section class="section-padding contact-section" id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Contact Left Information -->
+        <div class="contact-info-block">
+          <span class="section-tag">LET'S FIND YOUR NEXT MOVE</span>
+          <h2 class="section-title">Have a Property in Mind?</h2>
+          <p class="section-subtitle">
+            Tell us your requirement. Whether you seek an investment plot on Jadcherla Road, a modern flat in New Town, or a serene villa in Yenugonda, our demo team is ready to assist.
+          </p>
+
+          <div class="contact-details-cards">
+            <div class="contact-card-item">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">Corporate Office</div>
+                <div class="contact-card-value">Plot No. 42, Near Collectorate Road, Yenugonda, Mahbubnagar, Telangana 509001</div>
+                <div class="contact-card-note">Visits by prior appointment welcome</div>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">Demo Phone Desk</div>
+                <div class="contact-card-value">+91 (Demo) 90000 00000</div>
+                <div class="contact-card-note">Mon – Sat: 9:30 AM to 7:00 PM IST</div>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.176.2-.351.226-.652.076-.3-.15-1.268-.468-2.416-1.492-.894-.798-1.498-1.784-1.674-2.085-.176-.3-.019-.462.132-.612.136-.135.301-.35.452-.526.15-.175.2-.3.301-.501.101-.2.05-.375-.025-.525-.075-.15-.676-1.63-.926-2.233-.243-.587-.49-.507-.676-.516l-.576-.01c-.2 0-.526.075-.802.375s-1.052 1.028-1.052 2.508 1.077 2.908 1.228 3.109c.15.2 2.119 3.235 5.132 4.538.717.31 1.278.496 1.716.634.72.228 1.375.196 1.893.118.577-.087 1.782-.728 2.033-1.431.25-.702.25-1.303.175-1.431-.075-.128-.276-.203-.576-.353z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.892.524 3.662 1.434 5.176L2 22l4.982-1.393A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.63 0-3.14-.49-4.4-1.33l-.315-.208-2.955.826.84-2.87-.215-.327A8.163 8.163 0 0 1 3.8 12c0-4.521 3.679-8.2 8.2-8.2 4.522 0 8.2 3.679 8.2 8.2 0 4.522-3.678 8.2-8.2 8.2z"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">WhatsApp Instant Support</div>
+                <div class="contact-card-value">
+                  <a href="https://wa.me/910000000000?text=Hello%20NOVA%20ESTATES%2C%20I%20would%20like%20to%20enquire%20about%20properties%20in%20Mahbubnagar." target="_blank" rel="noopener noreferrer" style="color:#93C5FD; text-decoration:underline;">
+                    Chat on WhatsApp (Configurable) ↗
+                  </a>
+                </div>
+                <div class="contact-card-note">Phone number configurable in data.js & Admin</div>
+              </div>
+            </div>
+
+            <div class="contact-card-item">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="contact-card-title">Electronic Mail</div>
+                <div class="contact-card-value">contact@novaestates.example</div>
+                <div class="contact-card-note">Responses within 24 hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Right Form Card -->
+        <div class="contact-form-card">
+          <h3 class="form-card-title">Send an Enquiry</h3>
+          <p class="form-card-subtitle">Fill out your details below. Enquiries are recorded into your browser's demo leads repository.</p>
+
+          <form id="form" novalidate>
+            <div class="contact-form-grid">
+              <div class="form-group grid-col-full">
+                <label class="form-label" for="formName">Full Name <span class="req">*</span></label>
+                <input class="form-control" id="formName" name="name" type="text" placeholder="e.g. Ramesh Reddy" required>
+                <span class="form-error-msg">Please enter your name (minimum 3 characters).</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="formPhone">Phone Number <span class="req">*</span></label>
+                <input class="form-control" id="formPhone" name="phone" type="tel" placeholder="e.g. 98480 12345" required>
+                <span class="form-error-msg">Please enter a valid phone number (8-16 digits).</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="formEmail">Email Address</label>
+                <input class="form-control" id="formEmail" name="email" type="email" placeholder="e.g. name@example.com">
+                <span class="form-error-msg">Please enter a valid email address.</span>
+              </div>
+
+              <div class="form-group grid-col-full">
+                <label class="form-label" for="formInterest">Interested In</label>
+                <select class="form-control" id="formInterest" name="interest">
+                  <option value="General Property Purchase">General Property Purchase</option>
+                  <option value="Residential Plot in Mahbubnagar">Residential Plot in Mahbubnagar</option>
+                  <option value="Apartment / Flat in New Town">Apartment / Flat in New Town</option>
+                  <option value="Luxury Villa in Yenugonda">Luxury Villa in Yenugonda</option>
+                  <option value="Schedule On-Site Inspection">Schedule On-Site Inspection</option>
+                  <option value="Selling a Property with Nova">Selling a Property with Nova</option>
+                </select>
+              </div>
+
+              <div class="form-group grid-col-full">
+                <label class="form-label" for="formMessage">Message / Specific Requirements</label>
+                <textarea class="form-control" id="formMessage" name="message" placeholder="Describe your budget, preferred locality, timeline or specific questions..."></textarea>
+              </div>
+
+              <div class="form-submit-row grid-col-full">
+                <button class="btn btn-primary btn-full" id="submitBtn" type="submit">
+                  Submit Enquiry →
+                </button>
+                <div class="form-status-alert" id="msg">
+                  Demo enquiries are saved only in this browser's localStorage.
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="logo-brand">
+            <div class="logo-icon">N</div>
+            <div class="logo-text">
+              <span class="logo-title">NOVA</span>
+              <span class="logo-subtitle">ESTATES</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            Building Trust. Creating Futures. Fictional real-estate demonstration platform for residential plots, apartments, and villas in Mahbubnagar, Telangana, India.
+          </p>
+          <div style="font-size:12px; color:#94A3B8;">
+            ⌖ Yenugonda, Mahbubnagar, Telangana 509001
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#properties">Properties Listing</a></li>
+            <li><a href="#projects">Marquee Projects</a></li>
+            <li><a href="#about">About NOVA</a></li>
+            <li><a href="#contact">Contact & Enquiry</a></li>
+            <li><a href="admin.html">Admin Dashboard</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Localities</h4>
+          <ul class="footer-links-list">
+            <li><a href="#properties" onclick="filterState.loc='Yenugonda'; $('loc').value='Yenugonda'; renderProperties();">Yenugonda</a></li>
+            <li><a href="#properties" onclick="filterState.loc='New Town'; $('loc').value='New Town'; renderProperties();">New Town</a></li>
+            <li><a href="#properties" onclick="filterState.loc='Jadcherla Road'; $('loc').value='Jadcherla Road'; renderProperties();">Jadcherla Road</a></li>
+            <li><a href="#properties" onclick="filterState.loc='Collectorate Area'; $('loc').value='Collectorate Area'; renderProperties();">Collectorate Area</a></li>
+            <li><a href="#properties" onclick="filterState.loc='Station Road'; $('loc').value='Station Road'; renderProperties();">Station Road</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Demo Disclaimer</h4>
+          <p style="font-size: 12.5px; line-height: 1.6; color: #94A3B8; margin-bottom: 12px;">
+            This website is a front-end demonstration project. All company names, listings, prices, layouts, and phone numbers are fictional mock data.
+          </p>
+          <div style="display:flex; gap:10px;">
+            <button class="btn btn-secondary btn-sm" onclick="openModal('privacyModal')">Privacy</button>
+            <button class="btn btn-secondary btn-sm" onclick="openModal('termsModal')">Terms</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <div>
+        © 2026 NOVA ESTATES · Fictional Demonstration Website · Mahbubnagar, Telangana.
+      </div>
+      <div>
+        <a href="admin.html" style="color:#93C5FD; font-weight:600;">Admin Demo Dashboard ↗</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Widget -->
+  <a class="floating-whatsapp-btn" id="floatingWhatsapp" href="https://wa.me/910000000000?text=Hello%20NOVA%20ESTATES" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp (Demo)">
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.301-.15-1.782-.879-2.057-.98-.276-.1-.476-.15-.676.15-.2.301-.776.98-.952 1.18-.176.2-.351.226-.652.076-.3-.15-1.268-.468-2.416-1.492-.894-.798-1.498-1.784-1.674-2.085-.176-.3-.019-.462.132-.612.136-.135.301-.35.452-.526.15-.175.2-.3.301-.501.101-.2.05-.375-.025-.525-.075-.15-.676-1.63-.926-2.233-.243-.587-.49-.507-.676-.516l-.576-.01c-.2 0-.526.075-.802.375s-1.052 1.028-1.052 2.508 1.077 2.908 1.228 3.109c.15.2 2.119 3.235 5.132 4.538.717.31 1.278.496 1.716.634.72.228 1.375.196 1.893.118.577-.087 1.782-.728 2.033-1.431.25-.702.25-1.303.175-1.431-.075-.128-.276-.203-.576-.353z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.892.524 3.662 1.434 5.176L2 22l4.982-1.393A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2c-1.63 0-3.14-.49-4.4-1.33l-.315-.208-2.955.826.84-2.87-.215-.327A8.163 8.163 0 0 1 3.8 12c0-4.521 3.679-8.2 8.2-8.2 4.522 0 8.2 3.679 8.2 8.2 0 4.522-3.678 8.2-8.2 8.2z"/></svg>
+    <span class="floating-tooltip">Chat with NOVA ESTATES (Demo)</span>
+  </a>
+
+  <!-- Brochure Request Modal -->
+  <div class="modal-overlay" id="brochureModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Request Project Brochure</h3>
+        <button class="modal-close-btn" onclick="closeModal('brochureModal')">&times;</button>
+      </div>
+      <form onsubmit="submitBrochureRequest(event)">
+        <div class="modal-body">
+          <p style="margin-bottom:16px;">
+            Enter your mobile number to receive the digital illustrative brochure for <strong id="brochureProjectName">Project</strong>.
+          </p>
+          <div class="form-group">
+            <label class="form-label" for="brochurePhone">Mobile Number (WhatsApp preferred)</label>
+            <input class="form-control" id="brochurePhone" type="tel" placeholder="e.g. 98480 12345" required>
+          </div>
+          <small style="color:var(--slate-500); display:block; margin-top:8px;">
+            Demo Mode: Inquiries are recorded in your browser's demo leads repository.
+          </small>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" onclick="closeModal('brochureModal')">Cancel</button>
+          <button class="btn btn-primary" type="submit">Send Brochure Link →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal-overlay" id="privacyModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Privacy Statement (Demo Project)</h3>
+        <button class="modal-close-btn" onclick="closeModal('privacyModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>1. Fictional Nature:</strong> NOVA ESTATES is an illustrative demonstration project. No real personal data is transmitted to remote commercial tracking servers.</p>
+        <p style="margin-top:12px;"><strong>2. Local Storage Usage:</strong> Form submissions and property modifications are stored solely within your client browser using HTML5 <code>localStorage</code>.</p>
+        <p style="margin-top:12px;"><strong>3. Data Clearing:</strong> You may at any point clear all locally stored demo enquiries and properties from the <a href="admin.html" style="color:var(--primary); font-weight:bold;">Admin Dashboard</a>.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="closeModal('privacyModal')">Understood</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms of Service Modal -->
+  <div class="modal-overlay" id="termsModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Terms & Demo Conditions</h3>
+        <button class="modal-close-btn" onclick="closeModal('termsModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong>1. Illustrative Pricing:</strong> All property prices, square yard calculations, and layouts are sample demo figures created for frontend design purposes.</p>
+        <p style="margin-top:12px;"><strong>2. No Legal Certification:</strong> Listings do not represent legally approved sanctions or binding real estate agreements.</p>
+        <p style="margin-top:12px;"><strong>3. Configurable Contact:</strong> The phone number and WhatsApp links are configurable demonstration placeholders and do not correspond to an actual individual.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="closeModal('termsModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo Disclaimer Modal -->
+  <div class="modal-overlay" id="disclaimerModal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Demo Disclaimer Notice</h3>
+        <button class="modal-close-btn" onclick="closeModal('disclaimerModal')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>This website was created to demonstrate a corporate, premium real-estate digital platform for <strong>NOVA ESTATES</strong> in Mahbubnagar, Telangana, India.</p>
+        <p style="margin-top:12px;">All properties, photographs, prices, layout diagrams, and enquiry leads are purely fictional demo assets.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="closeModal('disclaimerModal')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared Data Store & Application Logic -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

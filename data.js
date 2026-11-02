@@ -11,7 +11,7 @@ const NOVA_CONFIG = {
   tagline: "Building Trust. Creating Futures.",
   location: "Mahbubnagar, Telangana, India",
   address: "Plot No. 42, Near Collectorate Road, Yenugonda, Mahbubnagar, Telangana 509001",
-  phoneDisplay: "+91 (Demo) 9494360163",
+  phoneDisplay: "+91 9494360163",
   // Configurable WhatsApp Number - Demo placeholder (91 9494360163)
   // Users can change this in the Admin Dashboard Settings or in this config.
   whatsappNumber: "91 9494360163", 
